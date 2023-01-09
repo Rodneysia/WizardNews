@@ -3,6 +3,8 @@ const morgan = require("morgan");
 const postBank = require("./postBank");
 const app = express();
 
+const DATABASE_URL = "postgres://wizard_news_qisr_user:TVrcjTlpxmh8U1h6Z9qn9mUASgezKbXI@dpg-cetmebpa6gdut0prrgjg-a.ohio-postgres.render.com/wizard_news_qisr";
+
 const path = require('path')
 app.use(express.static('public'));
 
@@ -83,6 +85,7 @@ app.get('/posts/:id', (req, res) => {
     <small class="news-info">
       ${post.upvotes} upvotes | ${post.date}
     </small>
+    <a href="/">Go back </a>
     <p> ${post.content} </p>
     </div>
   </body>
